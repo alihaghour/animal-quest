@@ -1,12 +1,12 @@
 import pygame
 from spritesheet import Spritesheet
-
-#SPRITESHEET IMPORT
-spritesheet = Spritesheet('./Assets/fullss.png')
-ss1 = spritesheet.get_sprite(0, 32, 32, 3, (0,0,0))
+from entity import Entity
 
 #Player Class
-class Player:
+class Player(Entity):
     def __init__(self, pos_x, pos_y):
-        self.sprite = []
-        self.sprite.append()
+        Entity.__init__(self, pos_x, pos_y, "PLAYER")
+        Entity.init_spritesheet(self, 8)
+    
+    
+
