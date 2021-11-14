@@ -1,6 +1,5 @@
 import pygame
 from Entities.player import Player
-from Entities.spritesheet import Spritesheet
 
 #CONSTANTS
 WIDTH, HEIGHT = 720, 364
@@ -13,7 +12,7 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 #GENERAL SETUP
 player = Player(100,100)
 moving_sprite = pygame.sprite.Group()
-moving_sprite.add(Player)
+moving_sprite.add(player)
 
 #Main Function with event handler
 def main():
@@ -27,7 +26,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-            player.draw(WIN)
+            moving_sprite.draw(WIN)
         pygame.display.update()
 
     #EXIT
